@@ -1,20 +1,20 @@
 function App() {
   return (
- <div>
-  <h1> FixNow</h1>
-  <h2>מצא בעל מקצוע במהירות</h2>
-  <button> התחבר  </button>
-  <button> הרשם</button>
-  <hr/ >
-  <h3>בעלי מקצוע זמינים</h3>
-  <ul>
-    <li>אינסטלטורים</li>
-    <li>חשמלאים</li>
-    <li>צבעים</li>
-    <li>טכנאי מזגנים</li>
-    <li>מנעולנים</li>
+ <div className="container mt-5 text-center">
+<h1 className="display-3">FixNow</h1>
 
-  </ul>
+<p className="lead">מצא בעל מקצוע במהירות</p>
+<button className="btn btn-primary me-2">התחבר</button>
+<button className="btn btn-success">הירשם</button>
+<hr/>
+
+<div className="row mt-4"> 
+  <div className="card p-3">חשמלאי</div>
+  <div className="card p-3">אינסטלטור</div>
+ <div className="card p-3">מנעולן</div>
+  <div className="card p-3">טכנאי מזגנים</div>
+  <div className="card p-3">צבעי</div>
+</div>
  </div>
   ) ;
 }
