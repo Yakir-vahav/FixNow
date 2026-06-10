@@ -1,22 +1,39 @@
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import "./App.css";
+
 function App() {
   return (
- <div className="container mt-5 text-center">
-<h1 className="display-3">FixNow</h1>
+    <BrowserRouter>
+      <div dir="rtl">
+        <nav className="navbar navbar-expand-lg bg-white shadow-sm">
+          <div className="container">
+            <Link className="navbar-brand fw-bold" to="/">
+              🔧 FixNow
+            </Link>
 
-<p className="lead">מצא בעל מקצוע במהירות</p>
-<button className="btn btn-primary me-2">התחבר</button>
-<button className="btn btn-success">הירשם</button>
-<hr/>
+            <div>
+              <Link className="btn btn-outline-primary ms-2" to="/login">
+                התחבר
+              </Link>
 
-<div className="row mt-4"> 
-  <div className="card p-3">חשמלאי</div>
-  <div className="card p-3">אינסטלטור</div>
- <div className="card p-3">מנעולן</div>
-  <div className="card p-3">טכנאי מזגנים</div>
-  <div className="card p-3">צבעי</div>
-</div>
- </div>
-  ) ;
+              <Link className="btn btn-primary" to="/register">
+                הירשם
+              </Link>
+            </div>
+          </div>
+        </nav>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;
