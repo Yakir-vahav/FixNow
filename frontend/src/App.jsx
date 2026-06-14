@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import CreateRequest from "./pages/CreateRequest";
+import Workers from "./pages/Workers";
 import "./App.css";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/workers" element={<Workers />} />
           <Route path="/request" element={<CreateRequest />} />
         </Routes>
       </div>
