@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Workers() {
+  const [workers, setWorkers] = useState([]);
   const [searchName, setSearchName] = useState("");
   const [profession, setProfession] = useState("");
   const [city, setCity] = useState("");
 
-  const workers = [
-    { id: 1, name: "יוסי כהן", profession: "חשמלאי", city: "חולון", rating: 4.9 },
-    { id: 2, name: "אבי לוי", profession: "אינסטלטור", city: "בת ים", rating: 4.8 },
-    { id: 3, name: "משה ישראלי", profession: "מנעולן", city: "ראשון לציון", rating: 5.0 },
-    { id: 4, name: "דוד מזרחי", profession: "טכנאי מזגנים", city: "תל אביב", rating: 4.7 }
-  ];
+  useEffect(() => {
+    fetch("http://localhost:5000/api/workers")
+      .then((res) => res.json())
+      .then((data) => setWorkers(data))
+      .catch((error) => console.log("Error fetching workers:", error));
+  }, []);
 
   const filteredWorkers = workers.filter((worker) => {
     return (
@@ -46,7 +47,6 @@ function Workers() {
               <option value="חשמלאי">חשמלאי</option>
               <option value="אינסטלטור">אינסטלטור</option>
               <option value="מנעולן">מנעולן</option>
-              <option value="טכנאי מזגנים">טכנאי מזגנים</option>
             </select>
           </div>
 
@@ -60,7 +60,6 @@ function Workers() {
               <option value="חולון">חולון</option>
               <option value="בת ים">בת ים</option>
               <option value="ראשון לציון">ראשון לציון</option>
-              <option value="תל אביב">תל אביב</option>
             </select>
           </div>
         </div>
