@@ -68,3 +68,19 @@
   align-items: center;
   justify-content: center;
 }
+.service-card {
+  height: 100%;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-icon {
+  font-size: 56px;
+  line-height: 1;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

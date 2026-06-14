@@ -4,20 +4,49 @@ function Home() {
   return (
     <div dir="rtl">
       <section className="hero-section text-center">
-        <div className="container">
-          <h1 className="display-4 fw-bold mb-3">
-            מצא בעל מקצוע במהירות
-          </h1>
+  <div className="container">
+    <h1 className="display-4 fw-bold mb-3">
+      מצא בעל מקצוע במהירות
+    </h1>
 
-          <p className="lead mb-4">
-            FixNow מחברת בין לקוחות לבין בעלי מקצוע זמינים באזור שלהם
-          </p>
+    <p className="lead mb-4">
+      FixNow מחברת בין לקוחות לבין בעלי מקצוע זמינים באזור שלהם
+    </p>
 
-          <Link to="/request" className="btn btn-primary btn-lg">
-            פתח קריאת שירות
-          </Link>
-        </div>
-      </section>
+    <div className="row justify-content-center mb-4">
+      <div className="col-md-3 mb-2">
+        <select className="form-select">
+          <option>בחר מקצוע</option>
+          <option>חשמלאי</option>
+          <option>אינסטלטור</option>
+          <option>מנעולן</option>
+          <option>טכנאי מזגנים</option>
+          <option>צבעי</option>
+        </select>
+      </div>
+
+      <div className="col-md-3 mb-2">
+        <select className="form-select">
+          <option>בחר עיר</option>
+          <option>חולון</option>
+          <option>בת ים</option>
+          <option>ראשון לציון</option>
+          <option>תל אביב</option>
+        </select>
+      </div>
+
+      <div className="col-md-2 mb-2">
+        <button className="btn btn-primary w-100">
+          🔍 חפש
+        </button>
+      </div>
+    </div>
+
+    <Link to="/request" className="btn btn-outline-primary btn-lg">
+      פתח קריאת שירות
+    </Link>
+  </div>
+</section>
 
       <section className="container my-5">
         <h2 className="text-center mb-4">השירותים שלנו</h2>
