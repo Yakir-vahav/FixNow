@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const workersRoutes = require("./routes/workers");
 const requestsRoutes = require("./routes/requests");
-
+const db = require("./config/db");
 const app = express();
 
 app.use(cors());
