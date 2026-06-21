@@ -1,6 +1,22 @@
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import CitySelector from "../components/CitySelector";
+import citiesData from "../assets/israel_cities_names_and_geometric_data.json";
 
 function Home() {
+  const [selectedCityName, setSelectedCityName] = useState("");
+
+  const selectedCity = useMemo(
+    () =>
+      citiesData.find((city) => city.name === selectedCityName) || null,
+    [selectedCityName]
+  );
+
+  const cityOptions = useMemo(
+    () => citiesData.map((city) => city.name),
+    []
+  );
+
   return (
     <div dir="rtl">
       <section className="hero-section text-center">
@@ -26,13 +42,11 @@ function Home() {
       </div>
 
       <div className="col-md-3 mb-2">
-        <select className="form-select">
-          <option>בחר עיר</option>
-          <option>חולון</option>
-          <option>בת ים</option>
-          <option>ראשון לציון</option>
-          <option>תל אביב</option>
-        </select>
+        <CitySelector
+          options={cityOptions}
+          value={selectedCityName}
+          onChange={setSelectedCityName}
+        />
       </div>
 
       <div className="col-md-2 mb-2">

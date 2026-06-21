@@ -54,6 +54,19 @@ body {
   margin: 0;
 }
 
+.city-selector-menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.city-selector-menu::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.city-selector-menu::-webkit-scrollbar-thumb {
+  background-color: #d0d7de;
+  border-radius: 999px;
+}
+
 #root {
   width: 1126px;
   max-width: 100%;
